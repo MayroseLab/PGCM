@@ -1,0 +1,22 @@
+name: analyze_nonref
+
+pan_proteome:
+pan_transcriptome:
+out_dir:
+
+identical_to_ref_min_identity: 0.95
+identical_to_ref_length_diff_ratio: 0.1
+
+truncated_ref_min_identity: 0.95
+truncated_ref_max_subject_cov: 0.7
+
+homology_proteins_db: 
+homology_min_identity: 0.5
+
+RNA-seq_R1:
+RNA-seq_R2:
+min_RPKM: 1
+
+queue: itaym
+priority: 0
+ppn: 10

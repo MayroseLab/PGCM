@@ -1,0 +1,10 @@
+name: compare_pan_genomes
+out_dir: 
+pan_genomes_info: 
+
+# matching
+min_bitscore: 100
+
+queue: 
+priority: 
+ppn: 

@@ -1,0 +1,3 @@
+pan_genome_name	proteins_fasta	pav_tsv
+test_map_to_pan	/groups/itay_mayrose/nosnap/liorglic/Projects/PGCM/python/PGC_map_to_pan/test/RESULT/all_samples/pan_genome/pan_proteome.fasta	/groups/itay_mayrose/nosnap/liorglic/Projects/PGCM/python/PGC_map_to_pan/test/RESULT/all_samples/pan_genome/pan_PAV.tsv
+test_de_novo	/groups/itay_mayrose/nosnap/liorglic/Projects/PGCM/python/PGC_de_novo/test/RESULT/all_samples/pan_genome/pan_proteins.fasta	/groups/itay_mayrose/nosnap/liorglic/Projects/PGCM/python/PGC_de_novo/test/RESULT/all_samples/pan_genome/pan_PAV.tsv

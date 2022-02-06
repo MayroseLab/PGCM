@@ -1,0 +1,10 @@
+name: compare_pan_genomes
+out_dir: /groups/itay_mayrose/nosnap/liorglic/Projects/PGCM/python/compare_pan_genomes/test/RESULT_MW
+pan_genomes_info: /groups/itay_mayrose/nosnap/liorglic/Projects/PGCM/python/compare_pan_genomes/test/pan_genomes.tsv
+
+# matching
+min_bitscore: 5
+
+queue: itaymaa
+priority: 3
+ppn: 10

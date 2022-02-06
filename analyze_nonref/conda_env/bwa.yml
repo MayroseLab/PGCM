@@ -1,0 +1,5 @@
+name: BWA
+channels:
+  - bioconda
+dependencies:
+  - bwa

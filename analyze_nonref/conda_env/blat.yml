@@ -1,0 +1,5 @@
+name: blat
+channels:
+  - bioconda
+dependencies:
+  - blat
