@@ -1,0 +1,39 @@
+name: PGC_de_novo
+# input/output
+samples_info_file: LQ_samples_info.tsv
+hq_genomes_info_file: HQ_samples_info.tsv
+out_dir: RESULT
+
+# Reference genome
+reference_name: TAIR10
+reference_genome: Arabidopsis_thaliana.TAIR10.dna.toplevel.fa
+reference_annotation: Arabidopsis_thaliana.TAIR10.48.gff3
+reference_proteins: Arabidopsis_thaliana.TAIR10.pep.all.fa
+reference_cds: Arabidopsis_thaliana.TAIR10.cds.all.fa
+reference_transcripts: Arabidopsis_thaliana.TAIR10.cdna.all.fa
+
+# Reads pre processing (RPP)
+trimming_modules: "SLIDINGWINDOW:5:15 MINLEN:40"
+merge_min_overlap: 10
+merge_max_mismatch_ratio: 0.2
+
+# Assembly
+assembler: spades
+min_length: 300
+busco_set: brassicales_odb10
+
+# Annotation
+transcripts: An-1.protein-coding.genes.v2.5.2019-10-09.cDNA.fasta,C24.protein-coding.genes.v2.5.2019-10-09.cDNA.fasta,Cvi.protein-coding.genes.v2.5.2019-10-09.cDNA.fasta,Eri.protein-coding.genes.v2.5.2019-10-09.cDNA.fasta,Kyo.protein-coding.genes.v2.5.2019-10-09.cDNA.fasta,Ler.protein-coding.genes.v2.5.2019-10-09.cDNA.fasta,Sha.protein-coding.genes.v2.5.2019-10-09.cDNA.fasta,Arabidopsis_thaliana.TAIR10.cdna.all.fa
+proteins: An-1.protein-coding.genes.v2.5.2019-10-09.prot.fasta,C24.protein-coding.genes.v2.5.2019-10-09.prot.fasta,Cvi.protein-coding.genes.v2.5.2019-10-09.prot.fasta,Eri.protein-coding.genes.v2.5.2019-10-09.prot.fasta,Kyo.protein-coding.genes.v2.5.2019-10-09.prot.fasta,Ler.protein-coding.genes.v2.5.2019-10-09.prot.fasta,Sha.protein-coding.genes.v2.5.2019-10-09.prot.fasta,Arabidopsis_thaliana.TAIR10.pep.all.fa
+annotation_yml_template: conf_template_EVM.yml
+
+# Annotation filtration
+min_protein: 50
+
+# Environment
+queue: itaym
+priority: 1
+ppn: 30
+max_ram: 50g
+max_jobs: 600
+cluster_wrapper: pbs_qsub_snakemake_wrapper.py"

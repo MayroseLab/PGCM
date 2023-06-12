@@ -1,0 +1,3 @@
+pan_genome_name	path
+A_thaliana_MTP_x50	A_thaliana_pan_genome/map_to_pan/x50/RESULT
+A_thaliana_IA_x50_bowtie2	A_thaliana_pan_genome/iterative_mapping/x50_bowtie2/RESULT

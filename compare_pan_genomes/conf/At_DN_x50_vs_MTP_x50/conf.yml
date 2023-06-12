@@ -1,0 +1,9 @@
+name: compare_pan_genomes
+out_dir: RESULT
+pan_genomes_info: pan_genomes.tsv
+
+min_bitscore: 100
+
+queue: itaymaa
+priority: 0
+ppn: 20

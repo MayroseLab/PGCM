@@ -1,0 +1,22 @@
+name: analyze_nonref
+
+pan_proteome: pan_proteome.fasta
+pan_transcriptome: pan_transcripts.fasta
+out_dir: RESULT
+
+identical_to_ref_min_identity: 0.95
+identical_to_ref_length_diff_ratio: 0.2
+
+truncated_ref_min_identity: 0.95
+truncated_ref_max_subject_cov: 0.8
+
+homology_proteins_db: ENSEMBL_plants.pep.all.rename.fa
+homology_min_identity: 0.5
+
+RNA-seq_R1: subsample0.1_1.fastq.gz
+RNA-seq_R2: subsample0.1_2.fastq.gz
+min_RPKM: 1
+
+queue: itaym
+priority: 0
+ppn: 30

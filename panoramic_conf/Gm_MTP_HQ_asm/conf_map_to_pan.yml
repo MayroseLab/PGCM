@@ -1,0 +1,46 @@
+name: PGC_map_to_pan
+# input/output
+samples_info_file: LQ_samples_info.tsv
+hq_genomes_info_file: HQ_samples_info.tsv
+out_dir: RESULT
+
+# Reference genome
+reference_name: Wm82
+reference_genome: Wm82.a4.v1.genome.chr0.nt
+reference_annotation: glyma.Wm82.gnm4.ann1.T8TQ.gene_models_exons.chr0.gff3
+reference_proteins: Wm82.a4.v1.protein.aa
+id_simplify_function: "lambda x: x"
+
+# Reads pre processing (RPP)
+trimming_modules: "SLIDINGWINDOW:5:15 MINLEN:40"
+merge_min_overlap: 10
+merge_max_mismatch_ratio: 0.2
+
+# Assembly
+assembler: megahit
+min_length: 500
+busco_set: fabales_odb10
+
+# Annotation
+augustus_dir: soybean
+transcripts: MMseqs_result_rep_seq.fasta
+proteins: Wm82.a4.v1.protein.aa
+annotation_yml_template: conf_template_EVM.yml
+chunk_size: 5000000
+
+# Annotation filtration
+min_protein: 50
+similarity_threshold_proteins: 0.95
+
+# gene loss detection
+HQ_min_cov: 0.7
+LQ_min_cov: 0.4
+min_read_depth: 3
+
+# Environment
+queue: itaym
+priority: -1
+ppn: 30
+max_ram: 50g
+max_jobs: 400
+cluster_wrapper: pbs_qsub_snakemake_wrapper.py"

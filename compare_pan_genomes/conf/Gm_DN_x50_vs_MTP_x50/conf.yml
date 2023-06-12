@@ -1,0 +1,9 @@
+name: compare_pan_genomes
+out_dir: RESULT_minia
+pan_genomes_info: pan_genomes.tsv
+
+min_bitscore: 100
+
+queue: itaym
+priority: 1
+ppn: 30

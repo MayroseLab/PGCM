@@ -1,0 +1,12 @@
+name: jupyterlab
+channels:
+  - conda-forge
+dependencies:
+  - python=3
+  - jupyterlab
+  - pandas
+  - numpy
+  - scipy
+  - plotly
+  - python-kaleido
+  - biopython

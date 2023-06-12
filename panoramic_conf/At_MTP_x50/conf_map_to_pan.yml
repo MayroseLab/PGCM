@@ -1,0 +1,45 @@
+name: PGC_map_to_pan
+# input/output
+samples_info_file: LQ_samples_info.tsv
+hq_genomes_info_file: HQ_samples_info.tsv
+out_dir: RESULT
+
+# Reference genome
+reference_name: TAIR10
+reference_genome: Arabidopsis_thaliana.TAIR10.dna.toplevel.fa
+reference_annotation: Arabidopsis_thaliana.TAIR10.48.gff3
+reference_proteins: Arabidopsis_thaliana.TAIR10.pep.all.fa
+id_simplify_function: "lambda x: x"
+
+# Reads pre processing (RPP)
+trimming_modules: "SLIDINGWINDOW:5:15 MINLEN:40"
+merge_min_overlap: 10
+merge_max_mismatch_ratio: 0.2
+
+# Assembly
+assembler: spades
+min_length: 300
+busco_set: brassicales_odb10
+
+# Annotation
+annotation_yml_template: conf_template_EVM.yml
+transcripts: MMseqs_result_rep_seq.fasta
+proteins: Arabidopsis_thaliana.TAIR10.pep.all.fa
+chunk_size: 5000000
+
+# Annotation filtration
+min_protein: 50
+similarity_threshold_proteins: 0.95
+
+# gene loss detection
+HQ_min_cov: 0.7
+LQ_min_cov: 0.4
+min_read_depth: 3
+
+# Environment
+queue: itaym
+priority: 3
+ppn: 36
+max_ram: 50g
+max_jobs: 400
+cluster_wrapper: pbs_qsub_snakemake_wrapper.py"
